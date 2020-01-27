@@ -15,6 +15,6 @@ cache:
 build:
   stage: build
   script:
-    - rm master.zip && rm -rf libbech32-java-master && wget https://github.com/dcdpr/libbech32-java/archive/master.zip && unzip master.zip && cd libbech32-java-master && mvn install -DskipTests=true && cd ..
-    - rm master.zip && rm -rf libtxref-java-master && wget https://github.com/dcdpr/libtxref-java/archive/master.zip && unzip master.zip && cd libtxref-java-master && mvn install -DskipTests=true && cd ..
+    - wget https://github.com/dcdpr/libbech32-java/archive/master.zip && unzip master.zip && cd libbech32-java-master && mvn install -DskipTests=true && cd .. && rm master.zip 
+    - wget https://github.com/dcdpr/libtxref-java/archive/master.zip && unzip master.zip && cd libtxref-java-master && mvn install -DskipTests=true && cd .. && rm master.zip 
     - mvn $MAVEN_CLI_OPTS compile
