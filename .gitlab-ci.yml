@@ -15,4 +15,5 @@ cache:
 build:
   stage: build
   script:
+    - wget https://github.com/dcdpr/libbech32-java/archive/master.zip && unzip master.zip && cd libbech32-java-master && mvn install && cd ..
     - mvn $MAVEN_CLI_OPTS compile
